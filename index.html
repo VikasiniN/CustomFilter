@@ -1,0 +1,36 @@
+<html ng-app="testApp">
+    <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+            </script>
+             
+            <script src="app.js">
+            
+            </script>
+    </head>
+    <body>
+        <div ng-controller="myCtr">
+            
+            <table border="1"> 
+               <tr>
+                <th> firstname</th>
+                <th> lastname</th>
+                <th> number</th>
+                <th> age</th>
+                <th> company</th>
+                <th> dob</th>
+                <th> salary</th>
+            </tr> 
+            <tr ng-repeat="x in data " >
+                <td>{{x.firstname | uppercase}}</td>
+                <td>{{x.lastname |testFilter }}</td> <!-- CUSTOM FILTER -->
+                <td>{{x.number}}</td>
+                <td>{{x.age}}</td>
+                <td>{{x.company}}</td>
+                <td>{{x.dob | date:'MM/dd/yyyy'}}</td>
+                <td>{{x.salary}}</td>
+            </tr>
+
+            </table>
+        </div>
+    </body>
+</html>
